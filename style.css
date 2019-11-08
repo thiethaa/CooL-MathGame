@@ -1,0 +1,138 @@
+body{
+    background-image: url(https://media.istockphoto.com/vectors/colorful-mathematics-or-math-education-background-texture-in-vector-vector-id940178214?k=6&m=940178214&s=170667a&w=0&h=u8dsy69JQIy9nfNQHbFIz52KUzEPP380Vxx7m3TzujA=);
+    background-size: contain;
+}
+.container{
+    margin: 100px auto;
+    background-color:#DF327F;
+    border-radius: 5px;
+    box-shadow:4px 8px #121827 ;
+}
+.nav-item{
+    margin-left:25px;
+    padding:10px;
+}
+.navbar-brand{
+    font-size: 2vmax;
+    font-family: fantasy;
+    font-weight: bold;
+    margin-left:40px
+}
+#correct{
+    position: absolute;
+    margin:5px;
+    padding: 1px;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: rgb(113, 177, 17);
+    color:white;
+    border-radius: 5px;
+    visibility: hidden;
+}
+#wrong{
+    position: absolute;
+    margin:5px;
+    padding: 1px;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: rgb(205, 30, 30);
+    color:white;
+    border-radius: 5px;
+    visibility: hidden;
+}
+#boxcontainer{
+    background-color:#08C5EF;
+    margin-top:40px;
+    padding:20px;
+    box-shadow: 2px 4px rgb(7, 116, 167);
+    border-radius: 5px;
+}
+#boxmath{
+    background-color:rgb(254, 238, 10);
+    box-shadow: 2px 4px rgb(196, 150, 2); 
+    text-align:center;
+    padding:2vw;
+    font-size: 7vw;
+    border-radius: 5px;
+}
+#instruction{
+    background-color:rgb(199, 13, 199);
+    margin-top: 10px; 
+    text-align: center;
+    color:white;
+    font-weight: bold;
+    padding-top: 15px;
+    box-shadow: 2px 4px rgb(97, 1, 97);
+    font-size: 2vw;
+    border-radius: 5px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#boxresult{
+    background-color: rgb(128, 21, 221);
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 2px 4px rgb(41, 2, 73);
+    border-radius: 5px;
+}
+#box1, #box2, #box3, #box4{
+    background: linear-gradient(rgb(250, 193, 70),rgb(177, 9, 96));
+    box-shadow: 2px 4px rgb(108, 3, 43);
+    text-align: center;
+    line-height: 90px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 4vw;
+    transition: all 0.2s;
+}
+#box1:hover, #box2:hover, #box3:hover, #box4:hover{
+    background:linear-gradient(rgb(64, 4, 99),violet);
+    color:white;
+    box-shadow: 2px 4px rgb(30, 7, 101);
+}
+#box1:active, #box2:active, #box3:active, #box4:active{
+    top:4px;
+    box-shadow: 0px 0px rgb(30, 7, 101);
+}
+#startreset{
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top:1.5vh;
+    font-size: 1.2em;
+    box-shadow: 2px 4px rgb(0, 117, 143);
+    transition: all 0.2s;
+    background-color: rgb(49, 203, 230);
+    border-radius:10px rgb(1, 91, 97);
+    color: white;
+}
+#startreset:hover{
+    background-color: rgb(32, 165, 213);
+    color:black;
+    box-shadow: 2px 4px rgb(119, 141, 192);
+}
+#startreset:active{
+    box-shadow: 0px 0px rgb(30, 7, 101);
+}
+#time{
+    font-size: 1.2vw;
+    text-align: center;
+    background-color: rgb(31, 173, 18);
+    padding: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    color:white;
+    visibility: hidden;
+}
+#gameover{
+    position:absolute;
+    background:linear-gradient(rgb(222, 90, 138),rgb(105, 3, 3)) ;
+    font-size: 2.5vw;
+    text-align: center;
+    border-radius: 10px;
+    padding:1vw;
+    color: white;
+    text-transform: uppercase;
+    z-index: 2;
+    top:200px;
+    visibility: hidden;
+}
+
