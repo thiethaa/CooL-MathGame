@@ -22,14 +22,14 @@ function playgame(){
         gameover.style.visibility= "hidden"; 
         level();   
 }
-       
+
+
 //create function MULTIPLICATION button
 function multiple(){
     if(playing === true){
         location.reload();
     }else{
-        playing = true;
-        question.innerHTML = "A X B";  
+        playing = true; 
         multipleQA()
         for(i=1; i < 5; i++){
             document.getElementById(`box${i}`).onclick = function(){
@@ -43,10 +43,10 @@ function multiple(){
                         startReset.innerHTML= "Next"; 
         //hide game over box
                         gameover.style.visibility= "hidden";
+         //increase score by 1
+                        score++;
         //generate Q&A
                         multipleQA();
-        //increase score by 1
-                        score++;
                     }else{
                         setTimeout(function(){
                             corectbox.style.visibility="hidden" 
@@ -65,7 +65,7 @@ function multiple(){
                     }
                 }
             }
-        } 
+        }
     } 
 };
 function multipleQA(){
@@ -100,7 +100,6 @@ function addition(){
         location.reload();
      }else{
         playing = true;
-        question.innerHTML = "A + B";
         addQA();
         for(i=1; i < 5; i++){
             document.getElementById(`box${i}`).onclick = function(){
@@ -114,10 +113,10 @@ function addition(){
                         startReset.innerHTML= "Next"; 
         //hide game over box
                         gameover.style.visibility= "hidden";
+         //increase score by 1
+                        score++;
         //generate Q&A
                         addQA();
-        //increase score by 1
-                        score++;
                     }else{
                         setTimeout(function(){
                             corectbox.style.visibility="hidden" 
@@ -171,7 +170,6 @@ function substraction(){
         location.reload();
      }else{
         playing = true;
-        question.innerHTML = "A - B"; 
         subQA();
         for(i=1; i < 5; i++){
             document.getElementById(`box${i}`).onclick = function(){
@@ -185,10 +183,10 @@ function substraction(){
                         startReset.innerHTML= "Next"; 
         //hide game over box
                         gameover.style.visibility= "hidden";
+         //increase score by 1
+                        score++;
         //generate Q&A
                         subQA();
-        //increase score by 1
-                        score++;
                     }else{
                         setTimeout(function(){
                             corectbox.style.visibility="hidden" 
@@ -242,7 +240,6 @@ function division(){
         location.reload();
      }else{
         playing = true;
-        question.innerHTML = "A : B";
         divQA();
         for(i=1; i < 5; i++){
             document.getElementById(`box${i}`).onclick = function(){
@@ -256,10 +253,10 @@ function division(){
                         startReset.innerHTML= "Next"; 
         //hide game over box
                         gameover.style.visibility= "hidden";
+         //increase score by 1
+                        score++;
         //generate Q&A
                         divQA();
-        //increase score by 1
-                        score++;
                     }else{
                         setTimeout(function(){
                             corectbox.style.visibility="hidden" 
@@ -281,36 +278,39 @@ function division(){
         }
      }    
 };
+
 function divQA(){
-    var x = 1+ Math.round (9* Math.random());
-    var y = 1+ Math.round (9* Math.random());
+    var x =  2+ Math.floor( Math.random() * 100 / 2 ) * 2;
+    var y =  2;
     correctAns = x/y;
     question.innerHTML = `${x} : ${y}`;
 
 //place correct answer
     var correctPosition = 1+ Math.round(3* Math.random()); 
-    document.getElementById(`box${correctPosition}`).innerHTML= correctAns.toFixed(2);
+    document.getElementById(`box${correctPosition}`).innerHTML= correctAns;
 
 //place wrong answer
-    //create an array to populate correctans and wrong ans(in the end with push method)
+    //create an array to populate correct ans and wrong ans(in the end with push method)
     var answer = [correctAns];
     for(i = 1; i < 5; i++){
         if(i !== correctPosition){
 //make sure wrongAns != correctAns
             do{
-                wrongAns = (1 +Math.round (9 *Math.random())) / (1 +Math.round (9 *Math.random()));
+                wrongAns = ( 2+ Math.floor( Math.random() * 100 / 2 ) * 2) / 2;
             }
             while(answer.indexOf(wrongAns)>-1)
-                document.getElementById(`box${i}`).innerHTML = wrongAns.toFixed(2);
+                document.getElementById(`box${i}`).innerHTML = wrongAns;
  //push new array :wrongAns to anwer []               
                 answer.push(wrongAns);
         }
     }
 }
+
+
 //create function Level
 function level(){
     if(gamelevel.value == 'PLAY BY LEVEL'){
-        alert("PLZ CHOOSE THE LEVEL!!!")
+        alert("PLZ CHOOSE THE GAME LEVEL!!!")
         startReset.innerHTML= "Start Game";
         playing = false;
         return false;
@@ -360,4 +360,3 @@ function startcountdown(){
         clearInterval(action);
     };
 
-//show correct/wrong box for 1 sec = play game
